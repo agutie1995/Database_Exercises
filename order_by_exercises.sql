@@ -23,11 +23,12 @@ WHERE (last_name LIKE 'E%'
 	AND last_name LIKE '%e');
 
 -- Find all employees hired in the 90s and born on Christmas — 362 rows.
+-- Find all employees hired in the 90s and born on Christmas — 362 rows.
 SELECT concat(first_name, ' ', last_name), hire_date, birth_date
 FROM employees
 WHERE (hire_date LIKE '199%'
 	AND birth_date LIKE '%-12-25')
-ORDER BY hire_date DESC;
+ORDER BY birth_date, hire_date DESC;
 
 -- Employees hired in the 90s — 135,214 rows.
 SELECT concat(first_name, ' ', last_name), hire_date
